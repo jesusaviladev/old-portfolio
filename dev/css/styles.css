@@ -88,6 +88,7 @@ img{
 	padding: 1.5em 2em;
 	text-decoration: none;
 	color: var(--fontWhite);
+	text-shadow: 0px 1px 1px rgba(0,0,0,.5);
 }
 
 .menu__item{
@@ -113,7 +114,7 @@ img{
 .overview__header{
 	background: linear-gradient(to bottom, var(--mediumBlue), var(--skyBlue));
 	text-align: center;
-	padding: 2rem;
+	padding: 6rem 2rem;
 	color: #eee;
 }
 
@@ -124,11 +125,23 @@ img{
 	margin:0;
 	text-align: center;
 	font-weight: lighter;
-	text-shadow: 0 2px 2px rgba(0,0,0.5);
+	letter-spacing: 3px;
 }
 
+@media screen and (min-width: 768px){
+	.overview__title{
+		font-size: 4rem;
+	}
+}
+
+
 .overview__subtitle{
-	font-weight: bold;
+	font-weight: 400;
+	letter-spacing: 2px;
+}
+
+.overview__subtitle--lighter{
+	font-weight: 300;
 }
 
 .overview__body{
@@ -141,6 +154,7 @@ img{
 	margin: 0;
 	padding: .5em;
 	text-align: center;
+	letter-spacing: 2px;
 }
 
 .overview__content{
@@ -169,18 +183,30 @@ img{
 	display: grid;
 	grid-template-columns: repeat(1, 1fr);
 	padding: 2rem 0;
-	grid-gap: 1em;
+	grid-gap: 2rem;
 	max-width: 85vw;
 	margin: auto;
 
 }
 
+.gallery__container{
+	background-color: #111;
+	overflow: hidden;
+	border-radius: 4px;
+	box-shadow: 0 5px 10px rgba(0,0,0,.3); 
+	cursor: pointer;
+}
+
 .gallery__image{
 	object-fit: cover;
-	border: 10px solid #fff;
-	border-radius: 5px;
-	cursor: pointer;
-	box-shadow: 0 5px 10px rgba(0,0,0,.3); 
+	transition: transform .5s, opacity .5s;
+}
+
+@media screen and (min-width: 768px){
+	.gallery__image:hover{
+		opacity: .7;
+		transform: scale(1.2);
+	}
 }
 
 .modal{
@@ -207,19 +233,28 @@ img{
 
 .modal__container{
 	background-color: #eee;
+	border-radius: 4px;
 	width: 90vw;
 	height: 90vh;
 	margin: auto;
-	padding: 2rem;
+	padding: 1rem;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 }
 
-.modal__image{
-	height: auto;
+@media screen and (min-width: 768px){
+	.modal__container{
+		width: 70vw;
+		padding: 2rem;
 	}
+
+	.modal__image{
+		max-height: 70%;
+	}
+
+}
 
 
 .info{
@@ -369,7 +404,7 @@ img{
 	}
 
 	.gallery__body{
-		grid-template-columns: repeat(2, 1fr);
+		grid-template-columns: repeat(3, 1fr);
 	}
 
 	.info__body{
