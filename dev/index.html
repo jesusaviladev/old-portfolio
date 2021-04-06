@@ -3,10 +3,10 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="css/normalize.css">
 	<link rel="preconnect" href="https://fonts.gstatic.com">
 	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 	<script src="https://kit.fontawesome.com/d0db572b41.js" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="css/normalize.css">
 	<link rel="stylesheet" href="css/styles.css">
 	<title>Jesús Avila | Desarrollador Web</title>
 </head>
@@ -22,19 +22,20 @@
 		<nav class="topbar">
 			<ul class="menu">
 				<li class="menu__item"><a href="index.html" class="menu__links">Inicio</a></li>
-				<li class="menu__item"><a href="#" class="menu__links">Resumen</a></li>
-				<li class="menu__item"><a href="#" class="menu__links">Portafolio</a></li>
-				<li class="menu__item"><a href="#" class="menu__links">Sobre mi</a></li>
-				<li class="menu__item"><a href="#" class="menu__links">Contacto</a></li>
+				<li class="menu__item"><a href="#overview" class="menu__links">Resumen</a></li>
+				<li class="menu__item"><a href="#portfolio" class="menu__links">Portafolio</a></li>
+				<li class="menu__item"><a href="#about" class="menu__links">Sobre mi</a></li>
+				<li class="menu__item"><a href="#contact" class="menu__links">Contacto</a></li>
 			</ul>
 		</nav>
 		
 	</header>
 
 	<main class="content">
-		<section class="overview">
+		<section class="overview" id="overview">
 			<header class="overview__header">
-				<h2 class="overview__title">Jesús Avila - Desarrollo Web</h2>
+				<h2 class="overview__title">Hola, soy Jesús Avila, desarrollador web junior</h2>
+				<p>Me dedico al desarrollo de sitios web y aplicaciones usando tecnologías como JavaScript, React y Node.js</p>
 			</header>
 			<div class="overview__body">
 				<p class="overview__text">Tecnologías que manejo</p>
@@ -52,9 +53,9 @@
 			</div>
 		</section>
 
-		<section class="gallery">
+		<section class="gallery" id="portfolio">
 			<header class="gallery__header">
-				<h2 class="gallery__title">Portafolio</h2>
+				<h2 class="gallery__title">Mi galería</h2>
 			</header>
 			<div class="gallery__body">
 				<img src="assets/images/1.jpg" alt="gallery picture" class="gallery__image">
@@ -66,7 +67,14 @@
 			</div>
 		</section>
 
-		<section class="info">
+		<div class="modal">
+			<div class="modal__container">
+				<h2 class="modal__title">Proyecto 1</h2>
+				<img src="assets/images/1.jpg" alt="Foto del proyecto" class="modal__image">
+			</div>
+		</div>
+
+		<section class="info" id="about">
 			<header class="info__header">
 				<h2 class="info__title">Sobre mi</h2>
 			</header>
@@ -78,9 +86,9 @@
 			</div>
 		</section>
 
-		<section class="contact">
+		<section class="contact" id="contact">
 			<div class="contact__wrapper">
-			<form action="#" class="form">
+			<form action="#" class="form" autocomplete="off">
 				<h2 class="contact__title">¡Envíame un mensaje!</h2>
 					<div class="contact__field">
 						<label for="name" class="contact__label">Nombre</label>
@@ -95,7 +103,7 @@
 							<textarea name="message" id="message" cols="30" rows="10" placeholder="Escribe tu mensaje..." class="contact__input"></textarea>
 					</div>
 				<div class="contact__button">
-					<button class="btn">Enviar</button>
+					<button type="submit" class="btn">Enviar</button>
 				</div>
 			</form>
 			</div>
@@ -107,14 +115,14 @@
 				<li><a href="https://www.facebook.com/infernaldeathhm" class="social__link" target="_blank"><i class="fab fa-facebook-square"></i></a></li>
 				<li><a href="https://instagram.com" class="social__link" target="_blank"><i class="fab fa-instagram"></i></a></li>
 				<li><a href="https://linkedin.com" class="social__link" target="_blank"><i class="fab fa-linkedin"></i></a></li>
-				<li><a href="https://github.com" class="social__link" target="_blank"><i class="fab fa-github"></i></i></a></li>
+				<li><a href="https://github.com" class="social__link" target="_blank"><i class="fab fa-github"></i></a></li>
 			</ul>
 		<div class="footer__container">
 			<div class="footer__info">
 				<p>Sitio desarrollado por Jesús Ávila</p>
 				<p>Barinas, Venezuela</p>
 				<p>Email: avijesus13@gmail.com</p>
-				<p>Copyright © 2021 - 2022</p>
+				<p class="date">Copyright © 2021 - 2022</p>
 			</div>
 		</div>
 	</footer>
