@@ -3,7 +3,7 @@
 }
 
 body{
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Montserrat', sans-serif;
 	min-height: 100vh;
 }
 
@@ -108,20 +108,27 @@ img{
 }
 
 .overview{
-
 }
 
 .overview__header{
-	padding: 10em 8em;
 	background: linear-gradient(to bottom, var(--mediumBlue), var(--skyBlue));
+	text-align: center;
+	padding: 2rem;
+	color: #eee;
 }
 
 
 .overview__title{
-	font-size: 5vmax;
-	color: #fff;
+	font-size: 2.5rem;
+	text-transform: uppercase;
 	margin:0;
 	text-align: center;
+	font-weight: lighter;
+	text-shadow: 0 2px 2px rgba(0,0,0.5);
+}
+
+.overview__subtitle{
+	font-weight: bold;
 }
 
 .overview__body{
