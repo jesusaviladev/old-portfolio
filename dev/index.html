@@ -78,10 +78,10 @@
 			</header>
 			<div class="gallery__body">
 				<div class="gallery__container">
-					<img src="assets/images/1.jpg" alt="gallery picture" class="gallery__image">
+					<img src="assets/images/1.jpg" alt="gallery picture" class="gallery__image" data-id="1">
 				</div>
 				<div class="gallery__container">
-					<img src="assets/images/2.jpg" alt="gallery picture" class="gallery__image">
+					<img src="assets/images/2.jpg" alt="gallery picture" class="gallery__image" data-id="2">
 				</div>
 				<div class="gallery__container">
 					<img src="assets/images/3.jpg" alt="gallery picture" class="gallery__image">
@@ -100,11 +100,15 @@
 
 		<div class="modal">
 			<div class="modal__container">
-				<h2 class="modal__title">Proyecto 1</h2>
-				<img src="assets/images/1.jpg" alt="Foto del proyecto" class="modal__image">
-				<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laborum, molestias, suscipit. Dolore labore odit ducimus corrupti, dicta quaerat molestiae voluptas, recusandae. Dolores quasi sequi doloremque debitis totam pariatur quis ab!</p>
-				<a href="#">LINK <i class="fas fa-external-link-alt"></i></a>
+
+				
 			</div>
+			<template id="template">
+					<h2 class="modal__title"></h2>
+					<img src="" alt="Foto del proyecto" class="modal__image">
+					<p class="modal__description"></p>
+					<a href="" class="modal__link" target="_blank">Ver Proyecto <i class="fas fa-external-link-alt"></i></a>
+			</template>
 		</div>
 
 		<section class="info" id="about">

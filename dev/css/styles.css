@@ -158,7 +158,7 @@ img{
 	text-align: center;
 	letter-spacing: 2px;
 	padding: .5rem 0 2rem 0;
-	box-shadow: 0 1px 1px rgba(0,0,0,.3); 
+	border-bottom: 1px solid rgba(0,0,0,.3);
 }
 
 .overview__content{
@@ -186,11 +186,6 @@ img{
 		transform: scale(1.1);
 	}
 }
-
-.fa-html5{
-	color:orange;
-}
-
 
 .gallery{
 	background-color: #e7e7df;
@@ -267,6 +262,10 @@ img{
 	align-items: center;
 }
 
+.modal__image{
+	box-shadow: 0 2px 5px rgba(0,0,0,.3);
+}
+
 @media screen and (min-width: 768px){
 	.modal__container{
 		width: 70vw;
@@ -274,6 +273,7 @@ img{
 	}
 
 	.modal__image{
+		width: 85%;
 		max-height: 70%;
 	}
 
@@ -370,6 +370,7 @@ img{
 	padding: 1em 6em;
 	border-radius: 5px;
 	cursor: pointer;
+	transition: background .5s, color .5s;
 }
 @media screen and (min-width: 768px){
 	.btn:hover{
