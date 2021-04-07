@@ -6,16 +6,72 @@ const portfolioData = [
 		link: 'https://genteconestilomexico.com/',
 		image: 'assets/images/1.jpg',
 		thumbnail: 'assets/images/1.jpg',
-		title: 'Gente con estilo Mexico',
-		description: 'Pagina web de comercio electrónico, realizada es HTML, CSS y JavaScript'
+		title: 'Web de Gente con estilo Mexico',
+		description: 'Pagina web de comercio electrónico, realizada con HTML, CSS y JavaScript'
 	},
 	{
 		id: 2,
-		link: 'https://jesusaviladev.github.io/',
+		link: 'https://www.activa941fm.com/',
 		image: 'assets/images/2.jpg',
 		thumbnail: 'assets/images/2.jpg',
-		title: 'Proyecto 2',
-		description: 'Pagina web 2'
+		title: 'Reproductor de radio online',
+		description: 'Reproductor de audio para radio online realizado en JavaScript'
+	},
+	{
+		id: 3,
+		link: 'https://jesusaviladev.github.io/',
+		image: 'assets/images/3.jpg',
+		thumbnail: 'assets/images/3.jpg',
+		title: 'Menú de elementos JavaScript',
+		description: 'Menú de comidas realizado en JavaScript, como práctica para freecodecamp.org'
+	},
+	{
+		id: 4,
+		link: 'https://jesusaviladev.github.io/DoomLikeEngine',
+		image: 'assets/images/4.jpg',
+		thumbnail: 'assets/images/4.jpg',
+		title: 'Motor gráfico pseudo 3D',
+		description: 'Motor gráfico para videjuego pseudo 3D realizado usando la técnica de Raycasting en JavaScript. Basado en el motor gráfico de Doom y Wolfenstein 3D'
+	},
+	{
+		id: 5,
+		link: 'https://jesusaviladev.github.io/',
+		image: 'assets/images/5.jpg',
+		thumbnail: 'assets/images/5.jpg',
+		title: 'Diseño de un componente para perfil de usuario',
+		description: 'Diseño de componente para perfil de usuario realizado en HTML y CSS como práctica para los retos de frontendmentor.io'
+	},
+	{
+		id: 6,
+		link: 'https://jesusaviladev.github.io/',
+		image: 'assets/images/6.jpg',
+		thumbnail: 'assets/images/6.jpg',
+		title: 'Diseño de componente para preguntas frecuentes',
+		description: 'Componente para preguntas frecuentes realizado en HTML, CSS y JavaScript como práctica para los retos de frontendmentor.io'
+	},
+	{
+		id: 7,
+		link: 'https://jesusaviladev.github.io/',
+		image: 'assets/images/7.jpg',
+		thumbnail: 'assets/images/7.jpg',
+		title: 'Reproductor de radio online',
+		description: 'Reproductor de audio para radio online realizado en JavaScript'
+	},
+	{
+		id: 8,
+		link: 'https://jesusaviladev.github.io/',
+		image: 'assets/images/8.jpg',
+		thumbnail: 'assets/images/8.jpg',
+		title: 'Reproductor de radio online',
+		description: 'Reproductor de audio para radio online realizado en JavaScript'
+	},
+	{
+		id: 9,
+		link: 'https://jesusaviladev.github.io/',
+		image: 'assets/images/9.jpg',
+		thumbnail: 'assets/images/9.jpg',
+		title: 'Reproductor de radio online',
+		description: 'Reproductor de audio para radio online realizado en JavaScript'
 	},
 ]
 
