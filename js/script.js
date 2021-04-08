@@ -108,7 +108,6 @@ gallery.addEventListener('click', (e)=>{
 		})
 	}
 })
-//funcion 
 
 //formulario
 const form = document.querySelector('.form')
@@ -116,7 +115,7 @@ form.addEventListener('submit', (e)=>{
 	console.log(e)
 	e.preventDefault();
 })
-
+//funcion para elementos del modal 
 function getModalElement(id){
 	const modalElement = portfolioData.filter((elements)=> elements.id == id)
 	const fragment = document.createDocumentFragment()
@@ -138,3 +137,6 @@ function getModalElement(id){
 	container.appendChild(fragment)
 
 }
+
+//scroll
+const links = document.querySelectorAll('')
