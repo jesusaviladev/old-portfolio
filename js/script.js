@@ -135,8 +135,28 @@ function getModalElement(id){
 	fragment.appendChild(newTemplate)
 
 	container.appendChild(fragment)
-
 }
 
 //scroll
-const links = document.querySelectorAll('')
+const links = document.querySelectorAll('.menu__links')
+links.forEach(link=>{
+	link.addEventListener('click', (e)=>{
+		e.preventDefault()
+		const id = link.getAttribute('href').slice(1)
+		const navBar = document.querySelector('.header')
+		const navHeight = navBar.clientHeight
+		let position = document.getElementById(id).offsetTop - navHeight
+
+		if(!navBar.classList.contains('header__fixed')){
+			position -= navHeight
+		}
+
+		window.scrollTo({
+			left: 0,
+			top: position,
+			behavior: 'smooth'
+		})
+
+		menuBar.classList.remove('topbar--show')
+	})
+})
