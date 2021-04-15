@@ -32,9 +32,9 @@
 	<main class="content"> 
 		<section class="overview" id="home">
 			<header class="overview__header">
-				<h2 class="overview__title">Jesús Avila</h2>
-				<p class="overview__subtitle">Desarrollador web front-end</p>
-				<p class="overview__subtitle overview__subtitle--lighter">Me dedico al desarrollo de sitios web y aplicaciones usando tecnologías como JavaScript, React y Node.js.</p>
+				<h2 class="overview__title animationTitle">Jesús Avila</h2>
+				<p class="overview__subtitle animationTitle">Desarrollador web front-end</p>
+				<p class="overview__subtitle overview__subtitle--lighter animationTitle">Me dedico al desarrollo de sitios web y aplicaciones usando tecnologías como JavaScript, React y Node.js.</p>
 			</header>
 			<div class="overview__body">
 				<p class="overview__text">Tecnologías y herramientas</p>
@@ -64,7 +64,7 @@
 						<img src="assets/icons/sublime-text.svg" alt="Sublime Text">
 					</div>
 					<div class="overview__icon">
-						
+						<img src="assets/icons/bash2.svg" alt="Bash">
 					</div>
 				</div>
 			</div>
@@ -99,13 +99,13 @@
 		<div class="modal">
 			<div class="modal__container">
 
-				
 			</div>
 			<template id="template">
 					<h2 class="modal__title"></h2>
 					<img src="" alt="Foto del proyecto" class="modal__image">
 					<p class="modal__description"></p>
-					<a href="" class="modal__link" target="_blank">Ver Proyecto <i class="fas fa-external-link-alt"></i></a>
+					<a href="#" class="modal__link" target="_blank">Ver Proyecto <i class="fas fa-external-link-alt"></i></a>
+					<a href="#"><i class="far fa-times-circle"></i></a>
 			</template>
 		</div>
 
@@ -121,15 +121,15 @@
 
 		<section class="contact" id="contact">
 			<div class="contact__wrapper">
-			<form action="#" class="form" autocomplete="off">
+			<form action="https://formspree.io/f/xqkwakrk" class="form" autocomplete="off" method="POST">
 				<h2 class="contact__title">¡Envíame un mensaje!</h2>
 					<div class="contact__field">
 						<label for="name" class="contact__label">Nombre</label>
-						<input type="text" id="name" class="contact__input" placeholder="Escribe tu nombre"  autocomplete="off">
+						<input type="text" id="name" class="contact__input" placeholder="Escribe tu nombre" name="name" autocomplete="off">
 					</div>
 					<div class="contact__field">
 						<label for="email" class="contact__label">Email</label>
-						<input type="email" id="email" class="contact__input" placeholder="Ingresa tu dirección de correo" autocomplete="off">
+						<input type="email" id="email" class="contact__input" placeholder="Ingresa tu dirección de correo" name="_replyto" autocomplete="off">
 					</div>
 					<div class="contact__field">
 						<label for="message" class="contact__label">Mensaje</label>
@@ -155,7 +155,7 @@
 				<p>Sitio desarrollado por Jesús Ávila</p>
 				<p>Barinas, Venezuela</p>
 				<p>Email: avijesus13@gmail.com</p>
-				<p class="date">Copyright © 2021 - 2022</p>
+				<p class="date"></p>
 				<p><a href="https://icons8.com/icon/20909/html-5" style="color:white; text-decoration: none;">SVG icons by Icons8</a></p>
 			</div>
 		</div>

@@ -28,7 +28,6 @@ img{
 	display: flex;
 	justify-content: space-between;
 	box-shadow: 0px 3px 10px rgba(0,0,0,.5);
-	transition: width 1s;
 }
 
 .header__fixed{
@@ -36,6 +35,20 @@ img{
 	top: 0;
 	width: 100%;
 	z-index: 100;
+	animation-name: nav;
+	animation-duration: .5s;
+}
+
+@keyframes nav{
+	from{
+		transform: translate3d(0, -100%);
+		opacity: 0;
+	}
+
+	to{
+		transform: translate3d(0,0,0);
+		opacity: 1;
+	}
 }
 
 .header__logo{
@@ -165,6 +178,7 @@ img{
 	display: grid;
 	place-items: center;
 	grid-template-columns: repeat(3, 1fr);
+	gap: 1rem;
 }
 
 @media screen and (min-width: 768px){
@@ -237,36 +251,57 @@ img{
 	top:0;
 	left: 0;
 	z-index: 1000;
-	opacity: 0;
-	transform: scale(0);
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	transition: opacity .5s;
+	opacity: 0;
+	transform: scale(0);
+	transition: opacity .5s ease, transform .5s ease;
 }
 
 .modal--show{
 	opacity: 1;
 	transform: scale(1);
-	transition: opacity .5s;
 }
+
 
 .modal__container{
 	background-color: #eee;
 	border-radius: 4px;
 	width: 90vw;
 	height: 90vh;
-	margin: auto;
 	padding: 1rem;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+	position: relative;
 }
 
 .modal__image{
 	box-shadow: 0 2px 5px rgba(0,0,0,.3);
 }
+
+.fa-times-circle{
+	color: var(--mediumBlue);
+	font-size: 2rem;
+	position: absolute;
+	top: 3%;
+	right: 4%;
+	animation-name: rotatebutton;
+	animation-duration: 1s;
+}
+
+@keyframes rotatebutton{
+	0%{
+		transform: rotate(0);
+	}
+
+	100%{
+		transform: rotate(360deg);
+	}
+}
+
 
 @media screen and (min-width: 768px){
 	.modal__container{
@@ -279,8 +314,17 @@ img{
 		max-height: 70%;
 	}
 
-}
+	.fa-times-circle{
+		top: 5%;
+		right: 4%;
+		transition: transform 1s;
+	}
 
+	.fa-times-circle:hover{
+		transform: rotate(-360deg);
+	}
+
+}
 
 .info{
 	padding: 2rem;
@@ -312,6 +356,7 @@ img{
 	width: 200px;
 	height: 200px;
 	border-radius: 50%;
+	box-shadow: 5px 0px 10px rgba(0,0,0,.2);
 }
 
 .info__description{
@@ -418,7 +463,7 @@ img{
 
 @media screen and (min-width: 768px){
 	.social__link i:hover{
-		color:#ccc;
+		color:#d2d2d2;
 	}
 }
 
@@ -452,6 +497,27 @@ img{
 	}
 
 }
+
+/*  animaciones */
+.animationTitle {
+		animation-name: animationTitle;
+		animation-duration: 3s;
+}
+
+@keyframes animationTitle{
+	from{
+		opacity: 0;
+		transform: scale(0.9);
+	}
+
+	to{
+		opacity: 1;
+		transform: scale(1);
+	}
+}
+
+}
+
 
 
 

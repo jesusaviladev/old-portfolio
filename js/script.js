@@ -101,7 +101,8 @@ gallery.addEventListener('click', (e)=>{
 		getModalElement(id)
 
 		modal.addEventListener('click', (e)=>{
-			if(e.target.classList.contains('modal')){
+			if(e.target.classList.contains('modal') || e.target.classList.contains('fa-times-circle')){
+				e.preventDefault()
 				modal.classList.remove('modal--show')
 				document.body.style.overflowY = 'scroll'
 			}
@@ -113,7 +114,7 @@ gallery.addEventListener('click', (e)=>{
 const form = document.querySelector('.form')
 form.addEventListener('submit', (e)=>{
 	console.log(e)
-	e.preventDefault();
+	
 })
 //funcion para elementos del modal 
 function getModalElement(id){
@@ -160,3 +161,9 @@ links.forEach(link=>{
 		menuBar.classList.remove('topbar--show')
 	})
 })
+
+//get date
+const dateContainer = document.querySelector('.date')
+const year = new Date().getFullYear()
+dateContainer.textContent = `Copyright © ${year} - ${year + 1}`
+
