@@ -5,7 +5,7 @@ const portfolioData = [
 		id: 1,
 		link: 'https://genteconestilomexico.com/',
 		image: 'assets/images/1.jpg',
-		thumbnail: 'assets/images/1.jpg',
+		thumbnail: 'assets/images/thumb1.jpg',
 		title: 'Web de Gente con estilo Mexico',
 		description: 'Pagina web de comercio electrónico, realizada con HTML, CSS y JavaScript'
 	},
@@ -13,7 +13,7 @@ const portfolioData = [
 		id: 2,
 		link: 'https://www.activa941fm.com/',
 		image: 'assets/images/2.jpg',
-		thumbnail: 'assets/images/2.jpg',
+		thumbnail: 'assets/images/thumb2.jpg',
 		title: 'Reproductor de radio online',
 		description: 'Reproductor de audio para radio online realizado en JavaScript'
 	},
@@ -21,7 +21,7 @@ const portfolioData = [
 		id: 3,
 		link: 'https://jesusaviladev.github.io/',
 		image: 'assets/images/3.jpg',
-		thumbnail: 'assets/images/3.jpg',
+		thumbnail: 'assets/images/thumb3.jpg',
 		title: 'Menú de elementos JavaScript',
 		description: 'Menú de comidas realizado en JavaScript, como práctica para freecodecamp.org'
 	},
@@ -29,7 +29,7 @@ const portfolioData = [
 		id: 4,
 		link: 'https://jesusaviladev.github.io/DoomLikeEngine',
 		image: 'assets/images/4.jpg',
-		thumbnail: 'assets/images/4.jpg',
+		thumbnail: 'assets/images/thumb4.jpg',
 		title: 'Motor gráfico pseudo 3D',
 		description: 'Motor gráfico para videjuego pseudo 3D realizado usando la técnica de Raycasting en JavaScript. Basado en el motor gráfico de Doom y Wolfenstein 3D'
 	},
@@ -37,7 +37,7 @@ const portfolioData = [
 		id: 5,
 		link: 'https://jesusaviladev.github.io/',
 		image: 'assets/images/5.jpg',
-		thumbnail: 'assets/images/5.jpg',
+		thumbnail: 'assets/images/thumb5.jpg',
 		title: 'Diseño de un componente para perfil de usuario',
 		description: 'Diseño de componente para perfil de usuario realizado en HTML y CSS como práctica para los retos de frontendmentor.io'
 	},
@@ -45,7 +45,7 @@ const portfolioData = [
 		id: 6,
 		link: 'https://jesusaviladev.github.io/',
 		image: 'assets/images/6.jpg',
-		thumbnail: 'assets/images/6.jpg',
+		thumbnail: 'assets/images/thumb6.jpg',
 		title: 'Diseño de componente para preguntas frecuentes',
 		description: 'Componente para preguntas frecuentes realizado en HTML, CSS y JavaScript como práctica para los retos de frontendmentor.io'
 	},
@@ -110,12 +110,68 @@ gallery.addEventListener('click', (e)=>{
 	}
 })
 
-//formulario
+//eventos del formulario
 const form = document.querySelector('.form')
-form.addEventListener('submit', (e)=>{
-	console.log(e)
+form.addEventListener('submit', validateForm)
+const status = document.querySelector('.contact__message')
+//funcion para enviar el formulario
+async function handleSubmit(event){
+	event.preventDefault()
 	
-})
+	let data = new FormData(event.target)
+
+	fetch(event.target.action, {
+		method: form.method,
+		body: data,
+		headers: {
+            'Accept': 'application/json'
+        }
+	}).then(response => {
+		if(response.ok){
+			status.classList.add('contact__message--show')
+			status.textContent = '¡Tu mensaje ha sido enviado con éxito!'
+			form.reset()
+			clearMessage()
+		}
+
+		else{
+			status.classList.add('contact__message--show')
+			status.textContent = 'Debes llenar todos los campos'
+			clearMessage()
+		}
+		
+	}).catch(error => {
+		status.classList.add('contact__message--show')
+		status.textContent = 'Ha ocurrido un error'
+		clearMessage()
+	})
+
+}
+
+//funcion para validar formulario
+function validateForm(event){
+	event.preventDefault()
+	const name = document.getElementById('name').value
+	const email = document.getElementById('email').value
+	const message = document.getElementById('message').value
+
+	if (name.length > 0 && email.length > 0 && message.length > 0){
+		handleSubmit(event)
+	}
+
+	else {
+		status.classList.add('contact__message--show')
+		status.textContent = 'Debes llenar todos los campos'
+		clearMessage()
+	}
+}
+//ocultar mensaje nuevamente
+function clearMessage(){
+	setTimeout(()=>{
+		status.classList.remove('contact__message--show')
+	}, 5000)
+}
+
 //funcion para elementos del modal 
 function getModalElement(id){
 	const modalElement = portfolioData.filter((elements)=> elements.id == id)

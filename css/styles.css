@@ -367,7 +367,7 @@ img{
 .contact{
 	padding: 2rem 1rem;
 	background-color: #e7e7df;
-
+	position: relative;
 }
 
 .contact__wrapper{
@@ -411,6 +411,23 @@ img{
 .contact__button{
 	display: flex;
 	justify-content: center;
+}
+
+.contact__message{
+	background-color: var(--mediumBlue);
+	color: #eee;
+	padding: 1rem 3rem;
+	text-align: center;
+	visibility: hidden;
+	opacity: 0;
+	transform: translateY(-100px);
+	transition: transform .5s ease, opacity .5s linear;
+}
+
+.contact__message--show{
+	visibility: visible;
+	opacity: 1;
+	transform: translateY(0);
 }
 
 .btn{

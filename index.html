@@ -76,22 +76,22 @@
 			</header>
 			<div class="gallery__body">
 				<div class="gallery__container">
-					<img src="assets/images/1.jpg" alt="gallery picture" class="gallery__image" data-id="1">
+					<img src="assets/images/thumb1.jpg" alt="gallery picture" class="gallery__image" data-id="1">
 				</div>
 				<div class="gallery__container">
-					<img src="assets/images/2.jpg" alt="gallery picture" class="gallery__image" data-id="2">
+					<img src="assets/images/thumb2.jpg" alt="gallery picture" class="gallery__image" data-id="2">
 				</div>
 				<div class="gallery__container">
-					<img src="assets/images/3.jpg" alt="gallery picture" class="gallery__image" data-id="3">
+					<img src="assets/images/thumb3.jpg" alt="gallery picture" class="gallery__image" data-id="3">
 				</div>
 				<div class="gallery__container">
-					<img src="assets/images/4.jpg" alt="gallery picture" class="gallery__image" data-id="4">
+					<img src="assets/images/thumb4.jpg" alt="gallery picture" class="gallery__image" data-id="4">
 				</div>
 				<div class="gallery__container">
-					<img src="assets/images/5.jpg" alt="gallery picture" class="gallery__image" data-id="5">
+					<img src="assets/images/thumb5.jpg" alt="gallery picture" class="gallery__image" data-id="5">
 				</div>
 				<div class="gallery__container">
-					<img src="assets/images/6.jpg" alt="gallery picture" class="gallery__image" data-id="6">
+					<img src="assets/images/thumb6.jpg" alt="gallery picture" class="gallery__image" data-id="6">
 				</div>
 			</div>
 		</section>
@@ -125,20 +125,21 @@
 				<h2 class="contact__title">¡Envíame un mensaje!</h2>
 					<div class="contact__field">
 						<label for="name" class="contact__label">Nombre</label>
-						<input type="text" id="name" class="contact__input" placeholder="Escribe tu nombre" name="name" autocomplete="off">
+						<input type="text" id="name" class="contact__input" placeholder="Escribe tu nombre" name="name" required>
 					</div>
 					<div class="contact__field">
 						<label for="email" class="contact__label">Email</label>
-						<input type="email" id="email" class="contact__input" placeholder="Ingresa tu dirección de correo" name="_replyto" autocomplete="off">
+						<input type="email" id="email" class="contact__input" placeholder="Ingresa tu dirección de correo" name="_replyto" required>
 					</div>
 					<div class="contact__field">
 						<label for="message" class="contact__label">Mensaje</label>
-							<textarea name="message" id="message" cols="30" rows="10" placeholder="Escribe tu mensaje..." class="contact__input"></textarea>
+							<textarea name="message" id="message" cols="30" rows="10" placeholder="Escribe tu mensaje..." class="contact__input" required></textarea>
 					</div>
 				<div class="contact__button">
 					<button type="submit" class="btn">Enviar</button>
 				</div>
 			</form>
+			<p class="contact__message"></p>
 			</div>
 		</section>
 	</main>
