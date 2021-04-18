@@ -127,10 +127,14 @@ img{
 }
 
 .overview__header{
-	background: linear-gradient(to bottom, var(--mediumBlue), var(--skyBlue));
+	background-image: linear-gradient(to bottom, rgba(0, 88, 124, 1), rgba(104,206,211,.2)), url('../assets/images/code.jpg');
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
 	text-align: center;
 	padding: 6rem 2rem;
 	color: #eee;
+	min-height: 420px;
 }
 
 
@@ -533,7 +537,6 @@ img{
 	}
 }
 
-}
 
 
 
