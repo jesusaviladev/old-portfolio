@@ -41,12 +41,12 @@ img{
 
 @keyframes nav{
 	from{
-		transform: translate3d(0, -100%);
+		transform: translateY(-100%);
 		opacity: 0;
 	}
 
 	to{
-		transform: translate3d(0,0,0);
+		transform: translateY(0);
 		opacity: 1;
 	}
 }
@@ -55,7 +55,15 @@ img{
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	padding-left: 1em;
+	padding-left: .8rem;
+	padding-top: 4px;
+	padding-bottom: 4px;
+}
+
+@media screen and (min-width: 768px){
+	.header__logo{
+		padding-left: 2.2rem;
+	}
 }
 
 .header__title{
@@ -99,7 +107,7 @@ img{
 .menu__links{
 	display: block;
 	width: 100%;
-	padding: 1.5em 2em;
+	padding: 1.78em 2em;
 	text-decoration: none;
 	color: var(--fontWhite);
 	text-shadow: 0px 1px 1px rgba(0,0,0,.5);
