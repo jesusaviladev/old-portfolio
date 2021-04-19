@@ -4,7 +4,7 @@ const portfolioData = [
 	{
 		id: 1,
 		link: 'https://genteconestilomexico.com/',
-		image: 'assets/images/1.jpg',
+		image: 'assets/images/1.webp',
 		thumbnail: 'assets/images/thumb1.jpg',
 		title: 'Web de Gente con estilo Mexico',
 		description: 'Pagina web de comercio electrónico, realizada con HTML, CSS y JavaScript'
@@ -12,7 +12,7 @@ const portfolioData = [
 	{
 		id: 2,
 		link: 'https://www.activa941fm.com/',
-		image: 'assets/images/2.jpg',
+		image: 'assets/images/2.webp',
 		thumbnail: 'assets/images/thumb2.jpg',
 		title: 'Reproductor de radio online',
 		description: 'Reproductor de audio para radio online realizado en JavaScript'
@@ -20,7 +20,7 @@ const portfolioData = [
 	{
 		id: 3,
 		link: 'https://jesusaviladev.github.io/',
-		image: 'assets/images/3.jpg',
+		image: 'assets/images/3.webp',
 		thumbnail: 'assets/images/thumb3.jpg',
 		title: 'Menú de elementos JavaScript',
 		description: 'Menú de comidas realizado en JavaScript, como práctica para freecodecamp.org'
@@ -28,7 +28,7 @@ const portfolioData = [
 	{
 		id: 4,
 		link: 'https://jesusaviladev.github.io/DoomLikeEngine',
-		image: 'assets/images/4.jpg',
+		image: 'assets/images/4.webp',
 		thumbnail: 'assets/images/thumb4.jpg',
 		title: 'Motor gráfico pseudo 3D',
 		description: 'Motor gráfico para videjuego pseudo 3D realizado usando la técnica de Raycasting en JavaScript. Basado en el motor gráfico de Doom y Wolfenstein 3D'
@@ -36,7 +36,7 @@ const portfolioData = [
 	{
 		id: 5,
 		link: 'https://jesusaviladev.github.io/',
-		image: 'assets/images/5.jpg',
+		image: 'assets/images/5.webp',
 		thumbnail: 'assets/images/thumb5.jpg',
 		title: 'Diseño de un componente para perfil de usuario',
 		description: 'Diseño de componente para perfil de usuario realizado en HTML y CSS como práctica para los retos de frontendmentor.io'
@@ -44,7 +44,7 @@ const portfolioData = [
 	{
 		id: 6,
 		link: 'https://jesusaviladev.github.io/',
-		image: 'assets/images/6.jpg',
+		image: 'assets/images/6.webp',
 		thumbnail: 'assets/images/thumb6.jpg',
 		title: 'Diseño de componente para preguntas frecuentes',
 		description: 'Componente para preguntas frecuentes realizado en HTML, CSS y JavaScript como práctica para los retos de frontendmentor.io'
