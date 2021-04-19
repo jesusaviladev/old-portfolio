@@ -19,7 +19,7 @@ const portfolioData = [
 	},
 	{
 		id: 3,
-		link: 'https://jesusaviladev.github.io/',
+		link: 'https://jesusaviladev.github.io/proyectos/menu/',
 		image: 'assets/images/3.webp',
 		thumbnail: 'assets/images/thumb3.jpg',
 		title: 'Menú de elementos JavaScript',
@@ -35,7 +35,7 @@ const portfolioData = [
 	},
 	{
 		id: 5,
-		link: 'https://jesusaviladev.github.io/',
+		link: 'https://jesusaviladev.github.io/proyectos/profile-card-component//',
 		image: 'assets/images/5.webp',
 		thumbnail: 'assets/images/thumb5.jpg',
 		title: 'Diseño de un componente para perfil de usuario',
@@ -43,7 +43,7 @@ const portfolioData = [
 	},
 	{
 		id: 6,
-		link: 'https://jesusaviladev.github.io/',
+		link: 'https://jesusaviladev.github.io/proyectos/faq-accordion/',
 		image: 'assets/images/6.webp',
 		thumbnail: 'assets/images/thumb6.jpg',
 		title: 'Diseño de componente para preguntas frecuentes',
@@ -72,7 +72,7 @@ const portfolioData = [
 		thumbnail: 'assets/images/9.jpg',
 		title: 'Reproductor de radio online',
 		description: 'Reproductor de audio para radio online realizado en JavaScript'
-	},
+	}
 ]
 
 
