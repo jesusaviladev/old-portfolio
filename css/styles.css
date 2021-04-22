@@ -294,6 +294,12 @@ img{
 	box-shadow: 0 2px 5px rgba(0,0,0,.3);
 }
 
+.modal__link{
+	text-decoration: none;
+	color: var(--mediumBlue);
+}
+
+
 .fa-times-circle{
 	color: var(--mediumBlue);
 	font-size: 2rem;
