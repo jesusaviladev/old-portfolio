@@ -111,16 +111,16 @@ gallery.addEventListener('click', (e)=>{
 })
 
 //eventos del formulario
-const form = document.querySelector('.form')
+const form = document.getElementById('form')
 form.addEventListener('submit', validateForm)
 const status = document.querySelector('.contact__message')
 //funcion para enviar el formulario
-async function handleSubmit(event){
+ const handleSubmit = (event) => {
 	event.preventDefault()
 	
 	let data = new FormData(event.target)
 
-	fetch(event.target.action, {
+	fetch("https://formspree.io/f/xqkwakrk", {
 		method: form.method,
 		body: data,
 		headers: {

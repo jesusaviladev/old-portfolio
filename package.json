@@ -1,0 +1,22 @@
+{
+  "name": "portafolio",
+  "version": "1.0.0",
+  "description": "portafolio web dev",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jesusaviladev/jesusaviladev.github.io.git"
+  },
+  "keywords": [
+    "portafolio"
+  ],
+  "author": "jesusaviladev",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jesusaviladev/jesusaviladev.github.io/issues"
+  },
+  "homepage": "https://github.com/jesusaviladev/jesusaviladev.github.io#readme"
+}
