@@ -31,7 +31,7 @@ const portfolioData = [
 		image: 'assets/images/4.webp',
 		thumbnail: 'assets/images/thumb4.jpg',
 		title: 'Motor gráfico pseudo 3D',
-		description: 'Motor gráfico para videjuego pseudo 3D realizado usando la técnica de Raycasting en JavaScript. Basado en el motor gráfico de Doom y Wolfenstein 3D'
+		description: 'Motor gráfico para videojuego pseudo 3D realizado usando la técnica de Raycasting en JavaScript. Basado en el motor gráfico de Doom y Wolfenstein 3D'
 	},
 	{
 		id: 5,
@@ -75,7 +75,6 @@ const portfolioData = [
 	}
 ]
 
-
 //Menu pegajoso
 const menu = document.querySelector('.header')
 const menuHeight = menu.offsetTop;
@@ -83,98 +82,18 @@ window.addEventListener('scroll', ()=>{
 	(pageYOffset > menuHeight) ? menu.classList.add('header__fixed') : menu.classList.remove('header__fixed')
 })
 
-// Menu movil
+// Menu de moviles
 const menuToggle = document.querySelector('.header__toggle')
 const menuBar = document.querySelector('.topbar')
 menuToggle.addEventListener('click', (e)=>{
 	menuBar.classList.toggle('topbar--show')
 })
 
-//eventos del click
-const gallery = document.querySelector('.gallery')
-gallery.addEventListener('click', (e)=>{
-	if(e.target.classList.contains('gallery__image')){
-		const id = e.target.dataset.id
-		const modal = document.querySelector('.modal')
-		modal.classList.add('modal--show')
-		document.body.style.overflowY = 'hidden'
-		getModalElement(id)
-
-		modal.addEventListener('click', (e)=>{
-			if(e.target.classList.contains('modal') || e.target.classList.contains('fa-times-circle')){
-				e.preventDefault()
-				modal.classList.remove('modal--show')
-				document.body.style.overflowY = 'scroll'
-			}
-		})
-	}
-})
-
-//eventos del formulario
-const form = document.getElementById('form')
-form.addEventListener('submit', validateForm)
-const status = document.querySelector('.contact__message')
-//funcion para enviar el formulario
- const handleSubmit = (event) => {
-	event.preventDefault()
-	
-	let data = new FormData(event.target)
-
-	fetch("https://formspree.io/f/xqkwakrk", {
-		method: form.method,
-		body: data,
-		headers: {
-            'Accept': 'application/json'
-        }
-	}).then(response => {
-		if(response.ok){
-			status.classList.add('contact__message--show')
-			status.textContent = '¡Tu mensaje ha sido enviado con éxito!'
-			form.reset()
-			clearMessage()
-		}
-
-		else{
-			status.classList.add('contact__message--show')
-			status.textContent = 'Debes llenar todos los campos'
-			clearMessage()
-		}
-		
-	}).catch(error => {
-		status.classList.add('contact__message--show')
-		status.textContent = 'Ha ocurrido un error'
-		clearMessage()
-	})
-
-}
-
-//funcion para validar formulario
-function validateForm(event){
-	event.preventDefault()
-	const name = document.getElementById('name').value
-	const email = document.getElementById('email').value
-	const message = document.getElementById('message').value
-
-	if (name.length > 0 && email.length > 0 && message.length > 0){
-		handleSubmit(event)
-	}
-
-	else {
-		status.classList.add('contact__message--show')
-		status.textContent = 'Debes llenar todos los campos'
-		clearMessage()
-	}
-}
-//ocultar mensaje nuevamente
-function clearMessage(){
-	setTimeout(()=>{
-		status.classList.remove('contact__message--show')
-	}, 5000)
-}
-
 //funcion para elementos del modal 
-function getModalElement(id){
-	const modalElement = portfolioData.filter((elements)=> elements.id == id)
+const getModalElement = (id) => {
+	const [ modalElement ] = portfolioData.filter((element)=> element.id == id)
+	const { title, image, description, link  } = modalElement
+
 	const fragment = document.createDocumentFragment()
 	const template = document.getElementById('template').content
 	const container = document.querySelector('.modal__container')
@@ -183,16 +102,117 @@ function getModalElement(id){
 		container.removeChild(container.lastElementChild)
 	}
 
-	template.querySelector('.modal__title').textContent = modalElement[0].title
-	template.querySelector('.modal__image').src = modalElement[0].image
-	template.querySelector('.modal__description').textContent = modalElement[0].description
-	template.querySelector('.modal__link').href = modalElement[0].link
+	template.querySelector('.modal__title').textContent = title
+	template.querySelector('.modal__image').src = image
+	template.querySelector('.modal__description').textContent = description
+	template.querySelector('.modal__link').href = link
 
 	let newTemplate = template.cloneNode(true)
 	fragment.appendChild(newTemplate)
 
 	container.appendChild(fragment)
 }
+
+//eventos del click
+const gallery = document.querySelector('.gallery')
+gallery.addEventListener('click', (e)=>{
+	const element = e.target
+	if(element.classList.contains('gallery__image')){
+		const id = element.dataset.id
+		const modal = document.querySelector('.modal')
+		modal.classList.add('modal--show')
+		document.body.style.overflowY = 'hidden'
+		getModalElement(id)
+
+		modal.addEventListener('click', (e)=>{
+			const element = e.target
+			if(element.classList.contains('modal') || element.classList.contains('fa-times-circle')){
+				e.preventDefault()
+				modal.classList.remove('modal--show')
+				document.body.style.overflowY = 'scroll'
+			}
+		})
+	}
+})
+
+
+//ocultar mensajes nuevamente
+const clearMessage = (element) => {
+	setTimeout(()=>{
+		element.classList.remove('contact__message--show')
+		element.textContent = ''
+	}, 6000)
+}
+//mostrar mensajes
+const displayMessage = (message) => {
+	const status = document.querySelector('.contact__message')
+	status.textContent = message
+	status.classList.add('contact__message--show')
+	clearMessage(status)
+}
+
+//funcion para validar formulario
+const validateForm = (form) => {
+
+	const name = form.name.value.trim()
+	const email = form.email.value.trim()
+	const message = form.message.value.trim()
+
+	if(name !== '' && email !== '' && message !== '') return true
+		else return false
+
+}
+
+//enviar formulario
+const sendForm = (dataForm) => {
+	const formAPI = "https://formspree.io/f/xqkwakrk"
+	return fetch(formAPI, {
+			method: 'POST',
+			body: dataForm,
+			headers: {
+	            'Accept': 'application/json'
+	        }
+		})
+}	
+
+//funcion para manejar el formulario
+ const handleSubmit = (event) => {
+	event.preventDefault()
+	const form = event.target
+
+	const formIsValid = validateForm(form)
+
+	if(formIsValid){
+
+	let data = new FormData(event.target)
+
+	sendForm(data)
+		.then(response => {
+			if(response.ok){
+				displayMessage('¡Tu mensaje ha sido enviado con éxito!')
+				form.reset()
+			}
+
+			else{
+				displayMessage('Debes llenar todos los campos')
+			}
+			
+		})
+		.catch(error => {
+			console.log(error)
+			displayMessage('Ha ocurrido un error de conexión')
+		})
+	}
+
+	else {
+		displayMessage('Debes llenar todos los campos')
+	}
+	
+}
+
+//eventos del formulario
+const form = document.getElementById('form')
+form.addEventListener('submit', handleSubmit)
 
 //scroll
 const links = document.querySelectorAll('.menu__links')

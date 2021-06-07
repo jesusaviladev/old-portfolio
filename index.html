@@ -3,6 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Jesús Ávila, desarrollador web. Profesional especializado en el desarrollo de aplicaciones en entorno web">
 	<script src="https://kit.fontawesome.com/d0db572b41.js" crossorigin="anonymous"></script>
 	<link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
 	<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
@@ -25,10 +26,18 @@
 		</div>
 		<nav class="topbar">
 			<ul class="menu">
-				<li class="menu__item"><a href="#home" class="menu__links">Inicio</a></li>
-				<li class="menu__item"><a href="#portfolio" class="menu__links">Portafolio</a></li>
-				<li class="menu__item"><a href="#about" class="menu__links">Sobre mi</a></li>
-				<li class="menu__item"><a href="#contact" class="menu__links">Contacto</a></li>
+				<li class="menu__item">
+					<a href="#home" class="menu__links">Inicio</a>
+				</li>
+				<li class="menu__item">
+					<a href="#portfolio" class="menu__links">Portafolio</a>
+				</li>
+				<li class="menu__item">
+					<a href="#about" class="menu__links">Sobre mi</a>
+				</li>
+				<li class="menu__item">
+					<a href="#contact" class="menu__links">Contacto</a>
+				</li>
 			</ul>
 		</nav>
 	</header>
@@ -37,37 +46,37 @@
 		<section class="overview" id="home">
 			<header class="overview__header">
 				<h1 class="overview__title animationTitle">Jesús Avila</h1>
-				<p class="overview__subtitle animationTitle">Desarrollador web front-end</p>
-				<p class="overview__subtitle overview__subtitle--lighter animationTitle">Me dedico al desarrollo de sitios web y aplicaciones usando tecnologías como JavaScript, React y Node.js.</p>
+				<p class="overview__text animationTitle">Desarrollador web front-end</p>
+				<p class="overview__text overview__text--lighter animationTitle">Me dedico al desarrollo de sitios web y aplicaciones usando tecnologías como JavaScript, React y Node.js.</p>
 			</header>
 			<div class="overview__body">
-				<p class="overview__text">Tecnologías y herramientas</p>
+				<h2 class="overview__subtitle">Tecnologías y herramientas</h2>
 				<div class="overview__content">
-					<div class="overview__icon">
+					<div class="overview__icon" data-name="HTML">
 						<img src="assets/icons/html5.svg" alt="HTML">
 					</div>
-					<div class="overview__icon">
+					<div class="overview__icon" data-name="CSS">
 						<img src="assets/icons/css3.svg" alt="CSS">
 					</div>
-					<div class="overview__icon">
+					<div class="overview__icon" data-name="JavaScript">
 						<img src="assets/icons/javascript.svg" alt="Javascript">
 					</div>
-					<div class="overview__icon">
+					<div class="overview__icon" data-name="Git">
 						<img src="assets/icons/git.svg" alt="git">
 					</div>
-					<div class="overview__icon">
+					<div class="overview__icon" data-name="MySQL">
 						<img src="assets/icons/mysql.svg" alt="mysql">
 					</div>
-					<div class="overview__icon">
+					<div class="overview__icon" data-name="React">
 						<img src="assets/icons/react.svg" alt="React">
 					</div>
-					<div class="overview__icon">
+					<div class="overview__icon" data-name="Node.js">
 						<img src="assets/icons/nodejs.svg" alt="Node">
 					</div>
-					<div class="overview__icon">
+					<div class="overview__icon" data-name="Sublime">
 						<img src="assets/icons/sublime-text.svg" alt="Sublime Text">
 					</div>
-					<div class="overview__icon">
+					<div class="overview__icon" data-name="CMD">
 						<img src="assets/icons/bash2.svg" alt="Bash">
 					</div>
 				</div>
@@ -75,9 +84,7 @@
 		</section>
 
 		<section class="gallery" id="portfolio">
-			<header class="gallery__header">
 				<h2 class="gallery__title">Mi galería</h2>
-			</header>
 			<div class="gallery__body">
 				<div class="gallery__container">
 					<img src="assets/images/thumb1.jpg" alt="gallery picture" class="gallery__image" data-id="1">
@@ -114,9 +121,7 @@
 		</div>
 
 		<section class="info" id="about">
-			<header class="info__header">
-				<h2 class="info__title">Sobre mi</h2>
-			</header>
+			<h2 class="info__title">Sobre mi</h2>
 			<div class="info__body">
 				<img src="assets/images/picture.jpg" alt="Foto de perfil" class="info__picture">
 				<p class="info__description">Mi nombre es Jesús Ávila, desarrollador front-end junior. Actualmente curso estudios de Ingeniería en Sistemas en la Universidad Politécnica Territorial del Estado Barinas "José Félix Ribas". Tengo 2 años de experiencia en el desarrollo web. Apasionado de la tecnología, estoy dispuesto a expandir mis conocimientos y superar nuevos e interesantes retos.</p>
@@ -124,8 +129,7 @@
 		</section>
 
 		<section class="contact" id="contact">
-			<div class="contact__wrapper">
-			<form action="https://formspree.io/f/xqkwakrk" id="form" class="form" autocomplete="off" method="POST">
+			<form id="form" class="form" autocomplete="off">
 				<h2 class="contact__title">¡Envíame un mensaje!</h2>
 					<div class="contact__field">
 						<label for="name" class="contact__label">Nombre</label>
@@ -144,7 +148,6 @@
 				</div>
 			</form>
 			<p class="contact__message"></p>
-			</div>
 		</section>
 	</main>
 
@@ -155,7 +158,6 @@
 				<li><a href="https://www.linkedin.com/in/jesusaviladev" class="social__link" target="_blank"><i class="fab fa-linkedin"></i></a></li>
 				<li><a href="https://github.com/jesusaviladev/" class="social__link" target="_blank"><i class="fab fa-github"></i></a></li>
 			</ul>
-		<div class="footer__container">
 			<div class="footer__info">
 				<p>Sitio desarrollado por Jesús Ávila</p>
 				<p>Barinas, Venezuela</p>
@@ -163,7 +165,6 @@
 				<p class="date"></p>
 				<p><a href="https://icons8.com/icon/20909/html-5" style="color:white; text-decoration: none;">SVG icons by Icons8</a></p>
 			</div>
-		</div>
 	</footer>
 	<script src="js/script.js"></script>
 </body>
