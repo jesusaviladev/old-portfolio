@@ -31,7 +31,7 @@ img{
 	box-shadow: 0px 3px 10px rgba(0,0,0,.5);
 }
 
-.header__fixed{
+.header--fixed{
 	position: fixed;
 	top: 0;
 	width: 100%;
@@ -84,7 +84,7 @@ img{
 	width: 100%;
 	background-color: var(--mediumBlue);
 	position: absolute;
-	top: 63px;
+	top: 73px;
 	transform: translateX(-100%);
 	z-index: 100;
 	transition: transform .5s;
@@ -127,7 +127,7 @@ img{
 	}
 }
 
-.overview__header{
+.hero{
 	background-image: linear-gradient(to bottom, rgba(0, 88, 124, 1), rgba(104,206,211,.2)), url('../assets/images/code.jpg');
 	background-repeat: no-repeat;
 	background-position: center;
@@ -139,7 +139,7 @@ img{
 }
 
 
-.overview__title{
+.hero__title{
 	font-size: 2.5rem;
 	text-transform: uppercase;
 	margin:0;
@@ -149,18 +149,18 @@ img{
 }
 
 @media screen and (min-width: 768px){
-	.overview__title{
+	.hero__title{
 		font-size: 4rem;
 	}
 }
 
 
-.overview__text{
+.hero__text{
 	font-weight: 400;
 	letter-spacing: 2px;
 }
 
-.overview__text--lighter{
+.hero__text--lighter{
 	font-weight: 300;
 }
 
@@ -177,7 +177,7 @@ img{
 	padding: .5rem 0 2rem 0;
 }
 
-.overview__content{
+.overview__grid{
 	display: grid;
 	place-items: center;
 	grid-template-columns: repeat(3, 1fr);
@@ -185,7 +185,7 @@ img{
 }
 
 @media screen and (min-width: 768px){
-	.overview__content{
+	.overview__grid{
 		width: 80vw;
 		margin: auto;
 	}
@@ -302,16 +302,25 @@ img{
 	text-align: center;
 }
 
-/*@media screen and  {
+@media screen and (orientation: landscape) and (max-width: 700px){
 	.modal__container{
 		overflow-y: scroll;
 		justify-content: flex-start;
 	}
 }
-*/
+
+@media screen and (max-height: 700px) and (min-width: 1440px){
+	.modal__container{
+		overflow-y:scroll;
+		justify-content: flex-start;
+	}
+}
+
 
 .modal__image{
 	box-shadow: 0 2px 5px rgba(0,0,0,.3);
+	object-fit: cover;
+	max-height: 100%;
 }
 
 .modal__link{
@@ -354,7 +363,6 @@ img{
 
 	.modal__image{
 		width: 85%;
-		height: 70%;
 	}
 
 	.fa-times-circle{

@@ -79,7 +79,7 @@ const portfolioData = [
 const menu = document.querySelector('.header')
 const menuHeight = menu.offsetTop;
 window.addEventListener('scroll', ()=>{
-	(pageYOffset > menuHeight) ? menu.classList.add('header__fixed') : menu.classList.remove('header__fixed')
+	(pageYOffset > menuHeight) ? menu.classList.add('header--fixed') : menu.classList.remove('header--fixed')
 })
 
 // Menu de moviles
