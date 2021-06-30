@@ -89,7 +89,7 @@ menuToggle.addEventListener('click', (e)=>{
 	menuBar.classList.toggle('topbar--show')
 })
 
-//funcion para elementos del modal 
+//funcion para recuperar elementos del modal 
 const getModalElement = (id) => {
 	const [ modalElement ] = portfolioData.filter((element)=> element.id == id)
 	const { title, image, description, link  } = modalElement
