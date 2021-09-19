@@ -18,7 +18,7 @@
 <body>
 	<header class="header">
 		<div class="header__logo">
-			<img src="assets/images/logo-min.png" alt="logo">
+			<img src="assets/images/logo-min.png" alt="logo" class="logo">
 		</div> 
 
 		<div class="header__toggle">
@@ -85,26 +85,10 @@
 
 		<section class="gallery" id="portfolio">
 				<h2 class="gallery__title">Mi galería</h2>
-			<div class="gallery__body">
-				<div class="gallery__container">
-					<img src="assets/images/thumb1.jpg" alt="gallery picture" class="gallery__image" data-id="1">
-				</div>
-				<div class="gallery__container">
-					<img src="assets/images/thumb2.jpg" alt="gallery picture" class="gallery__image" data-id="2">
-				</div>
-				<div class="gallery__container">
-					<img src="assets/images/thumb3.jpg" alt="gallery picture" class="gallery__image" data-id="3">
-				</div>
-				<div class="gallery__container">
-					<img src="assets/images/thumb4.jpg" alt="gallery picture" class="gallery__image" data-id="4">
-				</div>
-				<div class="gallery__container">
-					<img src="assets/images/thumb5.jpg" alt="gallery picture" class="gallery__image" data-id="5">
-				</div>
-				<div class="gallery__container">
-					<img src="assets/images/thumb6.jpg" alt="gallery picture" class="gallery__image" data-id="6">
-				</div>
+			<div class="gallery__body" id="gallery">
+
 			</div>
+
 		</section>
 
 		<div class="modal">
@@ -124,8 +108,9 @@
 			<h2 class="info__title">Sobre mi</h2>
 			<div class="info__body">
 				<img src="assets/images/picture.jpg" alt="Foto de perfil" class="info__picture">
-				<p class="info__description">Mi nombre es Jesús Ávila, desarrollador front-end junior. Actualmente curso estudios de Ingeniería en Sistemas en la Universidad Politécnica Territorial del Estado Barinas "José Félix Ribas". Tengo 2 años de experiencia en el desarrollo web. Apasionado de la tecnología, estoy dispuesto a expandir mis conocimientos y superar nuevos e interesantes retos.</p>
+				<p class="info__description">Mi nombre es <strong>Jesús Ávila, desarrollador front-end junior.</strong> Actualmente curso estudios de <strong>Ingeniería en Sistemas</strong> en la <strong>Universidad Politécnica Territorial del Estado Barinas "José Félix Ribas".</strong> Tengo <strong>2 años de experiencia en el desarrollo web</strong>. Apasionado de la tecnología, estoy dispuesto a expandir mis conocimientos y superar nuevos e interesantes retos.</p>
 			</div>
+			<div id="target"></div>
 		</section>
 
 		<section class="contact" id="contact">
@@ -149,9 +134,14 @@
 			</form>
 			<p class="contact__message"></p>
 		</section>
+
+		<button class="btn-circle btn-circle--scroll" id="scroll-to-top">
+			<i class="fas fa-chevron-up"></i>
+		</button>
+
 	</main>
 
-	<footer class="footer">
+	<footer class="footer" id="footer">
 			<ul class="social">
 				<li><a href="https://www.facebook.com/infernaldeathhm" class="social__link" target="_blank"><i class="fab fa-facebook-square"></i></a></li>
 				<li><a href="https://www.instagram.com/jesusaviladev/" class="social__link" target="_blank"><i class="fab fa-instagram"></i></a></li>

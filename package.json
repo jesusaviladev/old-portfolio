@@ -4,7 +4,7 @@
   "description": "portafolio web dev",
   "main": "index.js",
   "scripts": {
-    "start": "servor ./ index.html 8080 --browse",
+    "start": "servor ./ index.html 8080 --browse --reload",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

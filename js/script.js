@@ -51,28 +51,53 @@ const portfolioData = [
 	},
 	{
 		id: 7,
-		link: 'https://jesusaviladev.github.io/',
-		image: 'assets/images/7.jpg',
-		thumbnail: 'assets/images/7.jpg',
-		title: 'Reproductor de radio online',
-		description: 'Reproductor de audio para radio online realizado en JavaScript'
+		link: 'https://jesusaviladev.github.io/proyectos/huddle-landing',
+		image: 'assets/images/7.png',
+		thumbnail: 'assets/images/thumb7.jpg',
+		title: 'Landing page',
+		description: 'Landing page para Huddle.com, diseño realizado como un reto de frontendmentor.io'
 	},
 	{
 		id: 8,
-		link: 'https://jesusaviladev.github.io/',
-		image: 'assets/images/8.jpg',
-		thumbnail: 'assets/images/8.jpg',
-		title: 'Reproductor de radio online',
-		description: 'Reproductor de audio para radio online realizado en JavaScript'
+		link: 'https://jesusaviladev.github.io/proyectos/card-slider/',
+		image: 'assets/images/8.png',
+		thumbnail: 'assets/images/thumb8.jpg',
+		title: 'Slider de cards',
+		description: 'Slider de cards, diseño realizado como un reto de frontendmentor.io'
 	},
 	{
 		id: 9,
-		link: 'https://jesusaviladev.github.io/',
-		image: 'assets/images/9.jpg',
-		thumbnail: 'assets/images/9.jpg',
-		title: 'Reproductor de radio online',
-		description: 'Reproductor de audio para radio online realizado en JavaScript'
+		link: 'https://jesusaviladev.github.io/proyectos/coming-soon',
+		image: 'assets/images/9.png',
+		thumbnail: 'assets/images/thumb9.jpg',
+		title: 'Suscripción online',
+		description: 'Formulario de Suscripción, diseño realizado como un reto de frontendmentor.io'
+	},
+	{
+		id: 10,
+		link: 'https://jesusaviladev.github.io/proyectos/contact',
+		image: 'assets/images/10.png',
+		thumbnail: 'assets/images/thumb10.jpg',
+		title: 'Formulario de contacto',
+		description: 'Formulario de contacto, diseño realizado como un reto de frontendmentor.io'
+	},
+	{
+		id: 11,
+		link: 'https://giphy-app-jesusaviladev.vercel.app/',
+		image: 'assets/images/11.png',
+		thumbnail: 'assets/images/thumb11.jpg',
+		title: 'Buscador de gifs',
+		description: 'Aplicación buscadora de Gifs, realizada en React.js con backend de giphy.com'
+	},
+	{
+		id: 12,
+		link: 'https://jesusaviladev.github.io/proyectos/landing-page',
+		image: 'assets/images/12.png',
+		thumbnail: 'assets/images/thumb12.jpg',
+		title: 'Landing page',
+		description: 'Diseño de landing page realizado como reto de frontendmentor.io'
 	}
+
 ]
 
 //Menu pegajoso
@@ -88,6 +113,54 @@ const menuBar = document.querySelector('.topbar')
 menuToggle.addEventListener('click', (e)=>{
 	menuBar.classList.toggle('topbar--show')
 })
+
+//Scroll del menu
+const links = document.querySelectorAll('.menu__links')
+links.forEach(link=>{
+	link.addEventListener('click', (e)=>{
+		e.preventDefault()
+		const id = link.getAttribute('href').slice(1)
+		const navBar = document.querySelector('.header')
+		const navHeight = navBar.clientHeight
+		let position = document.getElementById(id).offsetTop - navHeight
+
+		if(!navBar.classList.contains('header__fixed')){
+			position -= navHeight
+		}
+
+		window.scrollTo({
+			left: 0,
+			top: position,
+			behavior: 'smooth'
+		})
+
+		menuBar.classList.remove('topbar--show')
+	})
+})
+
+//funcion para cargar elementos de la galeria
+
+const getGalleryItems = () => {
+
+	const gallery = document.getElementById('gallery')
+	const fragment = document.createDocumentFragment()
+
+	portfolioData.forEach((element) => {
+		const container = document.createElement('DIV')
+		const thumbnail = document.createElement('IMG')
+		container.classList.add('gallery__container')
+		thumbnail.src = element.thumbnail
+		thumbnail.classList.add('gallery__image')
+		thumbnail.setAttribute('alt', 'gallery picture')
+		thumbnail.dataset.id = element.id
+		container.appendChild(thumbnail)
+		fragment.appendChild(container)
+	})
+
+	gallery.appendChild(fragment)
+
+}
+
 
 //funcion para recuperar elementos del modal 
 const getModalElement = (id) => {
@@ -113,7 +186,7 @@ const getModalElement = (id) => {
 	container.appendChild(fragment)
 }
 
-//eventos del click
+//eventos del click en la galería
 const gallery = document.querySelector('.gallery')
 gallery.addEventListener('click', (e)=>{
 	const element = e.target
@@ -134,6 +207,9 @@ gallery.addEventListener('click', (e)=>{
 		})
 	}
 })
+
+//cargar elementos de galería
+window.addEventListener('DOMContentLoaded', getGalleryItems)
 
 
 //ocultar mensajes nuevamente
@@ -214,32 +290,30 @@ const sendForm = (dataForm) => {
 const form = document.getElementById('form')
 form.addEventListener('submit', handleSubmit)
 
-//scroll
-const links = document.querySelectorAll('.menu__links')
-links.forEach(link=>{
-	link.addEventListener('click', (e)=>{
-		e.preventDefault()
-		const id = link.getAttribute('href').slice(1)
-		const navBar = document.querySelector('.header')
-		const navHeight = navBar.clientHeight
-		let position = document.getElementById(id).offsetTop - navHeight
-
-		if(!navBar.classList.contains('header__fixed')){
-			position -= navHeight
-		}
-
-		window.scrollTo({
-			left: 0,
-			top: position,
-			behavior: 'smooth'
-		})
-
-		menuBar.classList.remove('topbar--show')
-	})
-})
-
 //get date
 const dateContainer = document.querySelector('.date')
 const year = new Date().getFullYear()
 dateContainer.textContent = `Copyright © ${year} - ${year + 1}`
+
+//boton de scroll to top
+const target = document.getElementById('target');
+const scrollToTop = document.getElementById('scroll-to-top');
+
+const observer = new IntersectionObserver((entries) => {
+	entries.forEach(entry => {
+		if (entry.isIntersecting) scrollToTop.classList.add('btn-scroll--show');
+		else scrollToTop.classList.remove('btn-scroll--show');
+	})
+}, {
+	rootMargin: '1024px'
+})
+
+observer.observe(target)
+
+scrollToTop.addEventListener('click', () => {
+	window.scrollTo({
+			top: 0,
+			behavior: 'smooth'
+		})
+});
 
